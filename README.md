@@ -1,2 +1,2 @@
-# Pi Extension template
-Has sane `package.json` and example of basic example at `src/index.ts`
+# Pi System Prompt Customization Template
+The idea is - you can use this template for your own extension for composing your custom system prompt in scripted way, instead of using rigid SYSTEM.md, or without full access to system prompt with APPEND_SYSTEM.md

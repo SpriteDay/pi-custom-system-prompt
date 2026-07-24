@@ -19,12 +19,8 @@ Out of the box, it produces the exact same prompt as stock Pi — a no-op. You f
 ## Usage
 
 1. Fork/clone this repo
-2. Install dependencies:
-```bash
-pnpm install
-```
-3. Edit the template in `src/build-system-prompt.ts` (look for the `EDIT BELOW/ABOVE` markers)
-4. Install into Pi:
+2. Edit the template in `src/build-system-prompt.ts` (look for the `EDIT BELOW/ABOVE` markers)
+3. Install into Pi:
 ```bash
 pi install /path/to/your/clone
 ```

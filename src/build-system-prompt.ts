@@ -1,4 +1,4 @@
-import { createRequire } from "node:module"
+import { findPackageJSON } from "node:module"
 import { dirname, join, resolve } from "node:path"
 import type { BuildSystemPromptOptions, Skill } from "@earendil-works/pi-coding-agent"
 
@@ -6,8 +6,14 @@ let _piPkgDir: string | undefined
 
 function getPiPackageDir(): string {
 	if (!_piPkgDir) {
-		const req = createRequire(import.meta.url)
-		_piPkgDir = dirname(req.resolve("@earendil-works/pi-coding-agent/package.json"))
+		const packageJsonPath = findPackageJSON(
+			"@earendil-works/pi-coding-agent",
+			import.meta.url,
+		)
+		if (!packageJsonPath) {
+			throw new Error("Unable to locate @earendil-works/pi-coding-agent")
+		}
+		_piPkgDir = dirname(packageJsonPath)
 	}
 	return _piPkgDir
 }

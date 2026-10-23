@@ -31,6 +31,22 @@ pi -e /path/to/your/clone
 
 After making changes, run `/reload` in Pi to pick them up.
 
+## Export the rendered prompt
+
+To inspect the complete prompt produced by the current template, run:
+
+```bash
+pnpm prompt:emit
+```
+
+This writes `.test-output/system-prompt.txt`, which is gitignored. The standalone export uses Pi's standard `read`, `bash`, `edit`, and `write` tool definitions. Session-specific inputs (skills, context files, `SYSTEM.md`, and `APPEND_SYSTEM.md`) are not included.
+
+To export somewhere else for review, pass `--output`:
+
+```bash
+pnpm prompt:emit -- --output system-prompt.txt
+```
+
 ## Example
 
 ```typescript

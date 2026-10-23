@@ -4,14 +4,15 @@
   "packageManager": "pnpm@11.5.2",
   "private": true,
   "scripts": {
-    "fmt": "biome format --write ./src && eslint ./src --fix",
-    "lint": "biome lint ./src && eslint ./src",
-    "ts": "tsc --noEmit"
+    "fmt": "biome format --write ./src ./scripts && eslint ./src ./scripts --fix",
+    "lint": "biome lint ./src ./scripts && eslint ./src ./scripts",
+    "ts": "tsc --noEmit",
+    "prompt:emit": "tsx scripts/emit-system-prompt.mts"
   },
-  "pi": {   
+  "pi": {
     "extensions": [
-       "./src/index.ts" 
-  ]
+      "./src/index.ts"
+    ]
   },
   "peerDependencies": {
     "@earendil-works/pi-agent-core": "*",
@@ -19,15 +20,14 @@
     "@earendil-works/pi-coding-agent": "*",
     "@earendil-works/pi-tui": "*"
   },
-  "dependencies": {
-  },
   "devDependencies": {
     "@biomejs/biome": "2.0.6",
-    "@types/node": "24.10.1",
-    "typescript": "^6",
     "@earendil-works/pi-agent-core": "0.81.0",
     "@earendil-works/pi-ai": "0.81.0",
     "@earendil-works/pi-coding-agent": "0.81.0",
-    "@earendil-works/pi-tui": "0.81.0"
+    "@earendil-works/pi-tui": "0.81.0",
+    "@types/node": "24.10.1",
+    "tsx": "^4.23.15",
+    "typescript": "^6"
   }
 }

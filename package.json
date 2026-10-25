@@ -4,8 +4,8 @@
   "packageManager": "pnpm@11.5.2",
   "private": true,
   "scripts": {
-    "fmt": "biome format --write ./src ./scripts && eslint ./src ./scripts --fix",
-    "lint": "biome lint ./src ./scripts && eslint ./src ./scripts",
+    "fmt": "biome format --write ./src ./scripts",
+    "lint": "biome lint ./src ./scripts",
     "ts": "tsc --noEmit",
     "prompt:emit": "tsx scripts/emit-system-prompt.mts"
   },

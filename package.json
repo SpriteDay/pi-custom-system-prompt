@@ -7,7 +7,7 @@
     "fmt": "biome format --write ./src ./scripts",
     "lint": "biome lint ./src ./scripts",
     "ts": "tsc --noEmit",
-    "prompt:emit": "tsx scripts/emit-system-prompt.mts"
+    "emit": "tsx scripts/emit-system-prompt.mts"
   },
   "pi": {
     "extensions": [
